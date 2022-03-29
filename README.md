@@ -16,8 +16,8 @@
    1. update 自己的branch，将master的更新fetch到自己的仓库中
    2. 将branch pull到local
    3. 在vscode中修改任何冲突（if any）
-   4. 写代码
-   5. commit，并将local code push到自己的branch
+   4. 写代码，done
+   5. 可以再fetch一次，以免有什么新的change，然后commit，并将local code push到自己的branch
    6. 登录github，向master发起pull request
    7. master检查代码merge，手动确认merge
 ---
