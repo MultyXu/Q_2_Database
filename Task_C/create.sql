@@ -2,7 +2,7 @@ CREATE DATABASE If NOT EXISTS Q2_DB;
 USE Q2_DB;
 
 CREATE TABLE IF NOT EXISTS Employee (
-    Emp_ID int unsigned auto_increment,
+    Emp_ID int unsigned NOT NULL,
     Name varchar(30) NOT NULL,
     User_Type varchar(10) NOT NULL,
     User_Dept int unsigned,
@@ -10,17 +10,17 @@ CREATE TABLE IF NOT EXISTS Employee (
 );
 
 CREATE TABLE IF NOT EXISTS Department (
-    Dept_ID int unsigned auto_increment,
+    Dept_ID int unsigned NOT NULL,
     Dept_Name varchar(30) NOT NULL,
     Manager_ID int unsigned,
-    FOREIGN KEY (Manager_ID) REFERENCES Employee(Emp_ID),
+    FOREIGN KEY (Manager_ID) REFERENCES Employee(Emp_ID) ON DELETE SET NULL,
     PRIMARY KEY(Dept_ID)
 );
 
 ALTER TABLE Employee
 ADD CONSTRAINT employee_fk
 FOREIGN KEY (User_Dept) 
-REFERENCES Department(Dept_ID);
+REFERENCES Department(Dept_ID) ON DELETE SET NULL;
 
 CREATE TABLE IF NOT EXISTS Product (
     Item_number char(9) not null,
@@ -54,3 +54,4 @@ CREATE TABLE IF NOT EXISTS User (
     Address varchar(30) NOT NULL,
     PRIMARY KEY(User_ID)
 );
+

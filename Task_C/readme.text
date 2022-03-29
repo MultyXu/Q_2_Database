@@ -1,4 +1,7 @@
-In xampp the directory: mysql> source /opt/lampp/htdocs/Task_C/create.sql
+In xampp the directory: （subjective to change)
+mysql> 
+source /opt/lampp/htdocs/Task_C/create.sql
+source /opt/lampp/htdocs/Task_C/load.sql
 
 
 add foerign key constraint may get error (没大问题)

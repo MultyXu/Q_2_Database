@@ -1,0 +1,9 @@
+USE Q2_DB;
+SET FOREIGN_KEY_CHECKS = 0;
+LOAD DATA LOCAL INFILE '/opt/lampp/htdocs/Task_C/CSV/departments.csv' INTO TABLE Department
+    FIELDS TERMINATED BY ',' 
+    LINES TERMINATED BY '\n'
+    IGNORE 1 LINES
+    (Dept_ID,Dept_Name);
+
+SET FOREIGN_KEY_CHECKS = 1;
