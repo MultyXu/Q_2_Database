@@ -3,5 +3,6 @@ mysql>
 source /opt/lampp/htdocs/Task_C/create.sql
 source /opt/lampp/htdocs/Task_C/load.sql
 
+可以load除Department以外的data
 
 add foerign key constraint may get error (没大问题)

@@ -55,3 +55,7 @@ CREATE TABLE IF NOT EXISTS User (
     PRIMARY KEY(User_ID)
 );
 
+INSERT INTO Department (Dept_ID,Dept_Name) VALUES (1,'Dept_1');
+INSERT INTO Department (Dept_ID,Dept_Name) VALUES (2,'Dept_2');
+INSERT INTO Department (Dept_ID,Dept_Name) VALUES (3,'Dept_3');
+INSERT INTO Department (Dept_ID,Dept_Name) VALUES (4,'Dept_4');

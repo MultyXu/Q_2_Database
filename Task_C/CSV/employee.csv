@@ -1,0 +1,9 @@
+Emp_ID,Name,User_Type,User_Dept
+1,Dept_1_Manager,Manager,1
+2,Dept_2_Manager,Manager,2
+3,Dept_3_Manger,Manager,3
+4,Dept_4_Manager,Manager,4
+5,Jack,Employee,1
+6,David,Employee,2
+7,Rose,Employee,3
+8,Lisa,Employee,4
