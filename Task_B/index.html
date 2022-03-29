@@ -1,13 +1,19 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Sample code</title>
+<title>Search for Prodcut</title>
 </head>
 <body>
- 
+
+<h1>Search for the product you want</h1>
+
 <form action="../Task_C/index.php" method="post">
-Name: <input type="text" name="fname">
-Age: <input type="text" name="age">
+Search according to attribute: 
+<select name="attribute">
+<option value="Item_number">Item_number</option>
+<option value="Price">Price</option>
+<option value="Country_of_origin">Country of Origin</option>
+Keywords: <input type="text" name="keyword">
 <input type="submit" value="Submit">
 </form>
  
