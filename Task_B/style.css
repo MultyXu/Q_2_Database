@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 20px;
+  text-align: center;
+  font-size: 2px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content 
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+.public-top {
+    height: 30px;
+    background-color: rgb(202, 107, 132);
+}
+
+.public-top .top-left {
+    float: left;
+    color: #fff;
+    line-height: 20px;
+    padding: 5px;
+}
+
+.public-top .top-left a:hover {
+    color: rgb(37, 17, 65);
+}
+
+.public-top .top-right a:hover {
+    color: rgb(37, 17, 65);
+}
+
+.public-top .top-right {
+    float: right;
+    width: 80px;
+    color: #fff;
+    line-height: 20px;
+    padding: 5px;
+}
+
+
+
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
