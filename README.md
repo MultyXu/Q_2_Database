@@ -44,10 +44,20 @@
       1. hyperlink between pages 
          1. Navigation bar on every page
       2. ~~workable forms to take user inputs~~
-         1. Search Product Page (Index Page)
-         2. Manage Product Page for admin (insert, delete)
-         3. Update Product Page for Employee
-         4. Manage Employee page (add, update, delete)
+         1. Multy
+            1. Search Product Page (Index Page)
+            2. Update Product Page for Employee
+               1. update dept 1
+               2. update dept 2
+               3. update dept 3
+               4. update dept 4
+         4. 露霆
+            1. login in
+            2. TODO
+         5. 冯先生
+            1. TODO
+         6. Manage Product Page for admin (insert, delete)
+         7. Manage Employee page (add, update, delete)
    3. create `php` files that get values from form and excute sql queries
       1. Search 
       2. Insert 
