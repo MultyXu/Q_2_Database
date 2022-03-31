@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<script>
+    var usernames = ['jinghan', 'luting', 'jinghao'];
+    var passwords = ['jh', 'lt', 'jh'];
+
+
+    function check_login_info() {
+        var input_username = document.getElementById("username");
+        var input_password = document.getElementById("pwd");
+        for (var i = 0; i < usernames.length; i++) {
+            if (input_username.value === usernames[i]) {
+                if (input_password.value === passwords[i]) {
+                    alert('login success');
+                    window.open('comment.html');
+                    return;
+                } else {
+                    alert('Incorrect password\nPlease re-enter your login information');
+                    return;
+                }
+            } else if (i === usernames.length - 1) {
+                alert('Invalid username\nPlease re-enter your login information');
+                return;
+            }
+        }
+    }
+</script>
+
+<style>
+    form {
+        text-align: center;
+    }
+    
+    p {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+</style>
+
+
+<head>
+    <title> Login </title>
+    <link rel=" stylesheet " href="login.css ">
+</head>
+
+<body>
+    
+    <img src="https://www.w3schools.com/w3images/forestbridge.jpg " width="100% " height="100% " style="z-index:-100;position:absolute;left:0;top:0 ">
+    <div class="public-top">
+            <div class="top-left">
+                <a herf="">Home</a>
+            </div>
+            
+    </div>
+
+    <div class="container window">
+                <div>
+                    <p class="bold-center ">Login</p>
+                </div>
+                <form action=" " method="post ">
+                    <p> Username
+                        <input type="text" name=" username" id="username" class="input-label" /> </p>
+                    <p> Password <input type="password" name="pwd" id="pwd" class="input-label" /> </p>
+                    <p>
+                        <input type="submit" name="submit" value="Submit" class="button" onclick="check_login_info()" />
+                    </p>
+                </form>
+        </div>
+</body>
+
+</html>
