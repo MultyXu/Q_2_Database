@@ -56,7 +56,7 @@
             2. TODO
          5. 冯先生
             1. TODO
-            github
+            2. 冯先生第一次用github
          6. Manage Product Page for admin (insert, delete)
          7. Manage Employee page (add, update, delete)
    3. create `php` files that get values from form and excute sql queries
