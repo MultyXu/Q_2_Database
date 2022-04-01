@@ -26,21 +26,25 @@ CREATE TABLE IF NOT EXISTS Product (
     Item_number char(9) not null,
     Price decimal(15),
     Quantity int,
-
+    
+    -- dept 1 info
     Measurement Decimal(10),
     Unit_of_measurement varchar(10) default 'mm',
     Material varchar(10),
     Gross_USD Decimal(10),
-
+    
+    -- dept 2 info
     Payment_term int default 30,
     Purchase_price decimal(15),
     Currency varchar(5) default 'USD',
 
+    -- dept 3 info
     Item_type_code char(10),
     D_line_item_category char(10),
     Product_code char(10),
     Country_of_origin char(10),
 
+    -- dept 4 info
     Manufacturing_policy varchar(10) default 'SKU',
     Routing_No varchar(10),
     Reordering_policy varchar(10) default 'N/A',

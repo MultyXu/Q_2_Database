@@ -47,18 +47,29 @@
          1. Multy
             1. Search Product Page (Index Page)
             2. Update Product Page for Employee
-               1. update dept 1
-               2. update dept 2
-               3. update dept 3
-               4. update dept 4
-         4. 露霆
+               1. if (Employee.id = 1, show dept info), merge into one html needed
+               2. update dept 1
+               3. update dept 2
+               4. update dept 3
+               5. update dept 4
+         2. 露霆
             1. login in
             2. TODO
-         5. 冯先生
-            1. TODO
-            2. 冯先生第一次用github
-         6. Manage Product Page for admin (insert, delete)
-         7. Manage Employee page (add, update, delete)
+         3. 冯先生
+            1. Admin.html 
+               1. admin 网页
+               2. add/delete product
+               3. add/delete/update employee
+            2. SQL
+               1. Employee, Product, 
+                  1. search for all information 
+                  2. insert Emp/product 
+                  3. update emp/product 
+                     1. dpet 1,2,3,4
+                  4. delete emp/product 
+            3. 
+         4. Manage Product Page for admin (insert, delete)
+         5. Manage Employee page (add, update, delete)
    3. create `php` files that get values from form and excute sql queries
       1. Search 
       2. Insert 

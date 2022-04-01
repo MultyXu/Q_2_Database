@@ -6,6 +6,7 @@ function connect_mysql(){
     $password = ""; # no password
 
     $conn = new mysqli($servername,$username,$password);
+    
     if ($conn->connect_error){
         die("Connect error" . $conn->connect_error);
     } else {
