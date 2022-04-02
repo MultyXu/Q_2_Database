@@ -13,8 +13,25 @@ include '../Task_C/functions.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Task_B/css/w3css.css">
     <title>update_product</title>
+</head>
 
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="../Task_B/index.html" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="../Task_B/update_product.php" class="w3-bar-item w3-button">Update_Product</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+          </div>
+    </div>
+</div>
+
+<div class="w3-container w3-padding-32" id="contact">
+
+<body>
 <?php 
 $conn = connect_mysql();
 
@@ -42,8 +59,8 @@ if ($feedback->num_rows == 0) {
     }
 }
 ?>
-</head>
-<body>
-    
 </body>
+
+</div>
+
 </html>
