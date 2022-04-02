@@ -1,21 +1,39 @@
 <html>
-<head>
-<meta charset="utf-8">
-<title>Search for Prodcut</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>Search for Prodcut</title>
+    </head>
 
-<h1>Search for the product you want</h1>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="#home" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="../Task_B/update_product.php" class="w3-bar-item w3-button">Update_Product</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+          </div>
+        </div>
+    </div>
 
-<form action="../Task_C/index.php" method="post">
-Search according to attribute: 
-<select name="attribute">
-<option value="Item_number">Item_number</option>
-<option value="Price">Price</option>
-<option value="Country_of_origin">Country of Origin</option>
-Keywords: <input type="text" name="keyword">
-<input type="submit" value="Submit">
-</form>
- 
-</body>
+    <body>
+
+        <div class="w3-container w3-padding-32" id="contact">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Search for Our Product</h3>
+            <p>Search for the product you want.</p>
+            <br>
+            <form action="../Task_C/index.php" method="post">
+                Search according to attribute:
+                <select class="w3-input w3-section w3-border" name="attribute">
+                    <option value="Item_number">Item_number</option>
+                    <option value="Price">Price</option>
+                    <option value="Country_of_origin">Country of Origin</option>
+                    Keywords: <input class="w3-input w3-section w3-border" type="text" name="keyword">
+                    <input class="w3-button w3-black w3-section" type="submit" value="Submit">
+            </form>
+        </div>
+        
+
+    </body>
 </html>
