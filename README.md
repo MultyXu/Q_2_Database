@@ -14,7 +14,7 @@
       1. master -> forked branch -> local
 3. 每次work流程
    1. update 自己的branch，将master的更新fetch到自己的仓库中
-   2. 将branch pull到local
+   2. 将自己仓库中的branch pull到local
    3. 在vscode中修改任何冲突（if any）
    4. 写代码，done
    5. 可以再fetch一次，以免有什么新的change，然后commit，并将local code push到自己的branch
@@ -48,13 +48,15 @@
             1. Search Product Page (Index Page)
             2. Update Product Page for Employee
                1. if (Employee.id = 1, show dept info), merge into one html needed
-               2. update dept 1
+               2. ~~update dept 1~~
                3. update dept 2
                4. update dept 3
                5. update dept 4
          2. 露霆
             1. login in
-            2. TODO
+            2. Home page CSS?
+            3. works_on page (manager assign task)
+            4. Manage Employee page (add, update, delete) ？？
          3. 冯先生
             1. Admin.html 
                1. admin 网页
@@ -67,9 +69,6 @@
                   3. update emp/product 
                      1. dpet 1,2,3,4
                   4. delete emp/product 
-            3. 
-         4. Manage Product Page for admin (insert, delete)
-         5. Manage Employee page (add, update, delete)
    3. create `php` files that get values from form and excute sql queries
       1. Search 
       2. Insert 
