@@ -35,7 +35,7 @@ if(!$feedback){
 if ($feedback->num_rows == 0) {
     echo "No result found <br>";
 } else {
-    echo "The results are <br>";
+    echo " <br> The results are <br>";
     while($row = mysqli_fetch_assoc($feedback)){
         $item_number = $row["Item_number"];
         $price = $row["Price"];
