@@ -25,10 +25,11 @@
 ## Server setup (Xampp)
 1. put all code in /opt/lampp/htdocs/
 2. start server 
-3. run create.sql & load.sql
+3. get into mysql terminal
+4. run create.sql & load.sql
    1. source /opt/lampp/htdocs/Task_C/create.sql
    2. source /opt/lampp/htdocs/Task_C/load.sql
-4. Start to use/test
+5. Start to use/test
 ---
 ## Sequential TODO list:
 1. ~~Finalize Database~~
