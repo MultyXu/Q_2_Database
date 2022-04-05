@@ -22,18 +22,13 @@
     <body>
 
         <div class="w3-container w3-padding-32" id="contact">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Search for Our Product</h3>
-            <p>Search for the product you want.</p>
-            <br>
-            <form action="../Task_C/index.php" method="post">
-                Search according to attribute:
-                <select class="w3-input w3-section w3-border" name="attribute">
-                    <option value="Item_number">Item_number</option>
-                    <option value="Price">Price</option>
-                    <option value="Country_of_origin">Country of Origin</option>
-                    Keywords: <input class="w3-input w3-section w3-border" type="text" name="keyword">
-                    <input class="w3-button w3-black w3-section" type="submit" value="Submit">
-            </form>
+            <!-- php code for showing all product info -->
+            <?php
+            include 'functions.php';
+            $conn = connect_mysql();
+            $Item_number = $_POST["Item_number"];
+            show_all_product($conn, $Item_number);
+            ?>
         </div>
         
 

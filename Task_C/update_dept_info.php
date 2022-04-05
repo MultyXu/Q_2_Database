@@ -1,6 +1,9 @@
 <?php
 include '../Task_C/functions.php';
 $conn = connect_mysql();
+
+// get the dept info from the cookie
+$dept = $_COOKIE["Dept"];
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,7 @@ $conn = connect_mysql();
     <?php 
     echo "Measurement is" . $_POST["Measurement"];
 
-        if ($_POST["Measurement"] || $_POST["Unit_of_measurement"] || $_POST["Material"] || $_POST["Gross_USD"]) {
+        if ($_POST["Measurement"] & $_POST["Unit_of_measurement"] & $_POST["Material"] & $_POST["Gross_USD"]) {
             echo "In the if loop";
             $var1 = $_POST["Measurement"];
             $var2 = $_POST["Unit_of_measurement"];
@@ -74,6 +77,8 @@ $conn = connect_mysql();
             }
 
             
+        } else {
+            echo "<br>Please enter all the information.";
         }
     ?>
 

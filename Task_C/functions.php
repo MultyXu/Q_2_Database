@@ -1,9 +1,9 @@
 <?php
 function connect_mysql(){
-    # connect to sql, need to change the servername & username if necessary
+    // connect to sql, need to change the servername & username if necessary
     $servername = "localhost";
     $username = "root";
-    $password = ""; # no password
+    $password = ""; // no password
 
     $conn = new mysqli($servername,$username,$password);
     
@@ -25,7 +25,9 @@ function connect_mysql(){
     return $conn;
 }
 
+
 function show_all_product($conn,$Item_number) {
+    // show all the information about the product
     $sql_cmd = "SELECT * FROM Product WHERE Item_number = '$Item_number';";
     
     $feedback=$conn->query($sql_cmd);
@@ -65,15 +67,38 @@ function show_all_product($conn,$Item_number) {
         
             // print all the information
             echo "<br> Item_number: $item_number, Price: $price, Quantity: $quantity <br> 
+            
             Dept 1 -- Measurement: $Measurement, Unit_of_measurement: $Unit_of_measurement, Material:$Material, Gross_USD: $Gross_USD <br>
+            
             Dept 2 -- Payment_term: $Payment_term, Purchase_price: $Purchase_price, Currency: $Currency <br>
+            
             Dept 3 -- Item_type_code: $Item_type_code, D_line_item_category: $D_line_item_category, Product_code: $Product_code, Country_of_origin: $Country_of_origin <br>
+            
             Dept 4 -- Manufacturing_policy: $Manufacturing_policy, Routing_No: $Routing_No, Reordering_policy: $Reordering_policy <br><br>";
         }
 
     } else {
         echo "Failed ";
         echo "Error: " . $sql_cmd . "<br>" . mysqli_error($conn);
+    }
+}
+
+function update_dept_info($conn,$Item_number,$dept) {
+    
+    // a better way is to create view and get the table attribute, to write less copied code
+    
+    switch ($dept) {
+        case "dept_1":
+            break;
+        case "dept_2":
+            break;
+        case "dept_3":
+            break;
+        case "dept_4":
+            break;
+        default:
+            // default case may should change, and and add admin case
+
     }
 }
 ?>
