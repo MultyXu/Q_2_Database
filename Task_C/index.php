@@ -1,3 +1,5 @@
+<!-- This page shows the search resutl from the index page -->
+
 <?php 
 include 'functions.php';
 # get the value from html form
@@ -5,45 +7,80 @@ $keyword = $_POST["keyword"];
 $attribute = $_POST["attribute"];
 ?>
 
-Searching for **<?php echo $keyword; ?>** 
-according to **<?php echo $attribute; ?>**
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../Task_B/css/w3css.css">
+        <title>Product Search Result</title>
+    </head>
 
-<br>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="../Task_B/index.html" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="../Task_B/update_product.php" class="w3-bar-item w3-button">Product</a>
+            <a href="TODO" class="w3-bar-item w3-button">Task</a>
+            <a href="TODO" class="w3-bar-item w3-button">Admin</a>
+            <a href="TODO" class="w3-bar-item w3-button">Login</a>
+          </div>
+        </div>
+    </div>
 
-<?php
-# connect to sql
-$conn = connect_mysql();
+    <body>
 
-# construct a sql query 
-if ($attribute == "Price") {
-    $sql_cmd = "SELECT * FROM Product WHERE $attribute = $keyword;";
-} else {
-    $sql_cmd = "SELECT * FROM Product WHERE $attribute LIKE '%$keyword%';";
-}
+        <div class="w3-container w3-padding-32" id="contact">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Product Search Result</h3>
+            <br>
+            
+            Searching for **<?php echo $keyword; ?>** 
+            according to **<?php echo $attribute; ?>**
 
-# $sql_cmd = "SELECT * FROM Product;";
-echo $sql_cmd; # print out the query
+            <br>
 
-# store the query result in feedback
-$feedback=$conn->query($sql_cmd);
+            <?php
+            # connect to sql
+            $conn = connect_mysql();
 
-# print the result on screen
-if(!$feedback){
-    echo "Error";
-}
+            # construct a sql query 
+            if ($attribute == "Price") {
+                $sql_cmd = "SELECT * FROM Product WHERE $attribute = $keyword;";
+            } else {
+                $sql_cmd = "SELECT * FROM Product WHERE $attribute LIKE '%$keyword%';";
+            }
 
-if ($feedback->num_rows == 0) {
-    echo "No result found <br>";
-} else {
-    echo " <br> The results are <br>";
-    while($row = mysqli_fetch_assoc($feedback)){
-        $item_number = $row["Item_number"];
-        $price = $row["Price"];
-        $quantity = $row["Quantity"];
-    
-        # if the value is null, it will print empty
-        echo "Item_number: " . $item_number . ", Price: " . $price . ", Quantity: " .  $quantity . "<br>";
-    }
-}
+            # $sql_cmd = "SELECT * FROM Product;";
+            echo $sql_cmd; # print out the query
 
-?>
+            # store the query result in feedback
+            $feedback=$conn->query($sql_cmd);
+
+            # print the result on screen
+            if(!$feedback){
+                echo "Error";
+            }
+
+            if ($feedback->num_rows == 0) {
+                echo "No result found <br>";
+            } else {
+                echo " <br> The results are <br>";
+                while($row = mysqli_fetch_assoc($feedback)){
+                    $item_number = $row["Item_number"];
+                    $price = $row["Price"];
+                    $quantity = $row["Quantity"];
+                
+                    # if the value is null, it will print empty
+                    echo "<br>Item_number: $item_number, Price: $price, Quantity: $quantity <form action='../Task_C/product_detail.php' method='post'>
+                    <input type='hidden' name='Item_number' value='$item_number'>
+                    <input class='w3-button w3-black w3-section' type='submit' value='Detail'>
+                    </form><br>";
+                }
+            }
+
+            ?>
+
+        </div>
+        
+    </body>
+</html>
+
