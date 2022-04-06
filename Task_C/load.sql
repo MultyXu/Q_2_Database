@@ -4,7 +4,7 @@ LOAD DATA LOCAL INFILE '/opt/lampp/htdocs/Task_C/CSV/employee.csv' INTO TABLE Em
     FIELDS TERMINATED BY ',' 
     LINES TERMINATED BY '\n'
     IGNORE 1 LINES
-    (Emp_ID,Name,User_Type,User_Dept);
+    (Emp_ID,Name,User_Type,Passward,User_Dept);
 
 UPDATE Department
 SET Manager_ID = 

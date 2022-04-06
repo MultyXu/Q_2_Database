@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS Employee (
     Emp_ID int unsigned NOT NULL,
     Name varchar(30) NOT NULL,
     User_Type varchar(10) NOT NULL,
+    Passward varchar(20) NOT NULL,
     User_Dept int unsigned,
     PRIMARY KEY(Emp_ID)
 );
