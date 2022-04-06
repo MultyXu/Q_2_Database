@@ -14,13 +14,14 @@ $attribute = $_POST["attribute"];
         <title>Product Search Result</title>
     </head>
 
+    <!-- Navigation Bar -->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
           <a href="../Task_B/index.html" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
           <!-- Float links to the right. Hide them on small screens -->
           <div class="w3-right w3-hide-small">
-            <a href="../Task_B/update_product.php" class="w3-bar-item w3-button">Product</a>
-            <a href="TODO" class="w3-bar-item w3-button">Task</a>
+            <a href="../Task_C/product.php" class="w3-bar-item w3-button">Product</a>
+            <a href="../Task_B/task.php" class="w3-bar-item w3-button">Task</a>
             <a href="TODO" class="w3-bar-item w3-button">Admin</a>
             <a href="TODO" class="w3-bar-item w3-button">Login</a>
           </div>
@@ -43,6 +44,7 @@ $attribute = $_POST["attribute"];
             $conn = connect_mysql();
 
             # construct a sql query 
+            # query depends on the attribute it gives
             if ($attribute == "Price") {
                 $sql_cmd = "SELECT * FROM Product WHERE $attribute = $keyword;";
             } else {

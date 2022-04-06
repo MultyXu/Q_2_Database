@@ -1,3 +1,9 @@
+<!-- 
+The page where employee enteres information for Product. 
+
+the form should display attributes according to the employee's department
+-->
+
 <?php
 include '../Task_C/functions.php';
 $conn = connect_mysql();
@@ -16,17 +22,19 @@ $dept = $_COOKIE["Dept"];
     <title>update department one info</title>
 </head>
 
-<div class="w3-top">
+    <!-- Navigation Bar -->
+    <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
           <a href="../Task_B/index.html" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
           <!-- Float links to the right. Hide them on small screens -->
           <div class="w3-right w3-hide-small">
-            <a href="../Task_B/update_product.php" class="w3-bar-item w3-button">Update_Product</a>
-            <a href="#about" class="w3-bar-item w3-button">About</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            <a href="../Task_C/product.php" class="w3-bar-item w3-button">Product</a>
+            <a href="../Task_B/task.php" class="w3-bar-item w3-button">Task</a>
+            <a href="TODO" class="w3-bar-item w3-button">Admin</a>
+            <a href="TODO" class="w3-bar-item w3-button">Login</a>
           </div>
         </div>
-</div>
+    </div>
 
 <div class="w3-container w3-padding-32" id="contact">
 
