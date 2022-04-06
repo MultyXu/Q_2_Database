@@ -27,8 +27,6 @@ Editing for product**<?php echo $item_no; ?>**
 </form> 
 
     <?php 
-
-            $var1 = $_POST["Item_no"];
             $var2 = $_POST["Emp_ID"];
             $var3 = $_POST["ddl"];
 
@@ -37,7 +35,7 @@ Editing for product**<?php echo $item_no; ?>**
                 SET Emp_ID = '$var2', 
                 Due_date = '$var3', 
                 WHERE 
-                Item_No = '$var1';";
+                Item_No = '$item_no';";
             
             if (mysqli_query($conn, $sql_c)) {
                 $sql = "SELECT * FROM Works_On;";
