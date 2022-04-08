@@ -39,7 +39,7 @@ the form should display attributes according to the employee's department
     $dept = $_COOKIE["Dept"];
     $Item_number = $_POST['Item_number'];
     echo $Item_number;
-    echo "<br> $dept";
+    echo "<br> You are in dept $dept <br>";
 
     switch ($dept) {
         case 1:
