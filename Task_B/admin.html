@@ -5,7 +5,6 @@
         <title>Search for Prodcut</title>
     </head>
 
-    <!-- Navigation Bar -->
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
           <a href="../Task_B/index.html" class="w3-bar-item w3-button"><b>Q2</b> PRODUCT</a>
@@ -19,23 +18,34 @@
         </div>
     </div>
 
-    <body>
 
+    <body>
         <div class="w3-container w3-padding-32" id="contact">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Search for Our Product</h3>
-            <p>Search for the product you want.</p>
-            <br>
-            <form action="../Task_C/product.php" method="post">
-                Search according to attribute:
-                <select class="w3-input w3-section w3-border" name="attribute">
-                    <option value="Item_number">Item_number</option>
-                    <option value="Price">Price</option>
-                    <option value="Country_of_origin">Country of Origin</option>
-                    Keywords: <input class="w3-input w3-section w3-border" type="text" name="keyword">
-                    <input class="w3-button w3-black w3-section" type="submit" value="Submit">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+                Administration Page
+            </h3>
+            <form action="../Task_C/add_delete_products.php" method="post">
+                <input class="w3-button w3-black w3-section" type="submit" value="Products' info" name = "product">
             </form>
+            <form action="../Task_C/employee_info.php" method="post">
+                <input class="w3-button w3-black w3-section" type="submit" value="Employees' info" name = "employee">
+            </form>
+
+
         </div>
-        
 
     </body>
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
+
