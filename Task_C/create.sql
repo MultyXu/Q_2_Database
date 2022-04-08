@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS Employee (
     Emp_ID int unsigned NOT NULL,
     Name varchar(30) NOT NULL,
     User_Type varchar(10) NOT NULL,
+    Passward varchar(20) NOT NULL,
     User_Dept int unsigned,
     PRIMARY KEY(Emp_ID)
 );
@@ -40,9 +41,9 @@ CREATE TABLE IF NOT EXISTS Product (
 
     -- dept 3 info
     Item_type_code char(10),
-    D_line_item_category char(10),
+    D_line_item_category varchar(10),
     Product_code char(10),
-    Country_of_origin char(10),
+    Country_of_origin varchar(10),
 
     -- dept 4 info
     Manufacturing_policy varchar(10) default 'SKU',

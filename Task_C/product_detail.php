@@ -27,7 +27,7 @@
             include 'functions.php';
             $conn = connect_mysql();
             $Item_number = $_POST["Item_number"];
-            show_all_product($conn, $Item_number);
+            show_all_product_info($conn, $Item_number);
             ?>
         </div>
         

@@ -43,16 +43,16 @@
          2. 添加Product， User数据集，和load
    2. create and code `HTML` files with basic `forms`(表单)
       1. hyperlink between pages 
-         1. Navigation bar on every page
+         1. ~~Navigation bar on every page~~
       2. ~~workable forms to take user inputs~~
          1. Multy
-            1. Search Product Page (Index Page)
-            2. Update Product Page for Employee
-               1. if (Employee.id = 1, show dept info), merge into one html needed
-               2. ~~update dept 1~~
-               3. update dept 2
-               4. update dept 3
-               5. update dept 4
+            1. ~~Search Product Page (Index Page)~~
+            2. ~~Update Product Page for Employee~~
+               1. ~~if (Employee.id = 1, show dept info), merge into one html needed~~
+                  1. ~~update dept 1~~
+                  2. ~~update dept 2~~
+                  3. ~~update dept 3~~
+                  4. ~~update dept 4~~
          2. 露霆
             1. login in
             2. Home page CSS?
@@ -68,7 +68,8 @@
                   1. search for all information 
                   2. insert Emp/product 
                   3. update emp/product 
-                     1. dpet 1,2,3,4
+                     1. ~~dpet 1,2,3,4~~
+                     2. update emp
                   4. delete emp/product 
    3. create `php` files that get values from form and excute sql queries
       1. Search 

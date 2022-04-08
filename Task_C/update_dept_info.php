@@ -3,15 +3,6 @@ The page where employee enteres information for Product.
 
 the form should display attributes according to the employee's department
 -->
-
-<?php
-include '../Task_C/functions.php';
-$conn = connect_mysql();
-
-// get the dept info from the cookie
-$dept = $_COOKIE["Dept"];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,53 +32,33 @@ $dept = $_COOKIE["Dept"];
 <body>
     <!-- this php is used to test -->
     <?php
+    include '../Task_C/functions.php';
+    $conn = connect_mysql();
+    
+    // get the dept info from the cookie
+    $dept = $_COOKIE["Dept"];
     $Item_number = $_POST['Item_number'];
     echo $Item_number;
-    ?>
+    echo "<br> You are in dept $dept <br>";
 
-    <form action="/Task_C/update_dept_info.php" method="post">
-        Enter the information here<br>
-        Measurement: <input type="text" name="Measurement"><br>
-        <!-- probably need a 下拉菜单for unit -->
-        Unit of Measurement:<input type="text" name="Unit_of_measurement"><br> 
-        Material<input type="text" name="Material"><br>
-        Gross USD<input type="text" name="Gross_USD"><br>
-        <input type="hidden" name="Item_number" value="<?php echo $Item_number?>">
-        <input type="submit" value="Submit">
-    </form> 
-
-    <?php 
-    echo "Measurement is" . $_POST["Measurement"];
-
-        if ($_POST["Measurement"] & $_POST["Unit_of_measurement"] & $_POST["Material"] & $_POST["Gross_USD"]) {
-            echo "In the if loop";
-            $var1 = $_POST["Measurement"];
-            $var2 = $_POST["Unit_of_measurement"];
-            $var3 = $_POST["Material"];
-            $var4 = $_POST["Gross_USD"];
-
-            echo "$Item_number";
-            $sql_cmd = "UPDATE Product 
-                SET Measurement = $var1, 
-                Unit_of_measurement = '$var2', 
-                Material = '$var3', 
-                Gross_USD = $var4
-                WHERE 
-                Item_number = '$Item_number';";
-            
-            if (mysqli_query($conn, $sql_cmd)) {
-                echo "in the query if ";
-                echo "$Item_number";
-                show_all_product($conn,$Item_number);
-            } else {
-                echo "Error: ";
-                echo $sql_cmd . "<br>" . mysqli_error($conn);
-            }
-
-            
-        } else {
-            echo "<br>Please enter all the information.";
-        }
+    switch ($dept) {
+        case 1:
+            edit_dept1($conn,$Item_number);
+            //show_all_product_info($conn,$Item_number);
+            break;
+        case 2:
+            edit_dept2($conn,$Item_number);
+            break;
+        case 3:
+            edit_dept3($conn,$Item_number);
+            break;
+        case 4:
+            edit_dept4($conn,$Item_number);
+            break;
+        default:
+            echo "<br>Either you are not login, or you are not a employee <br> for test purpose, you can driect to Test/set_dept1/2/3/4.php to set a dpet cookie";
+    }
+    
     ?>
 
 

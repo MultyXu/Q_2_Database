@@ -28,6 +28,19 @@ $attribute = $_POST["attribute"];
         </div>
     </div>
 
+    <div class="w3-container w3-padding-32" id="contact">
+            <p>Search for the product you want.</p>
+            <form action="../Task_C/product.php" method="post">
+                Search according to attribute:
+                <select class="w3-input w3-section w3-border" name="attribute">
+                    <option value="Item_number">Item_number</option>
+                    <option value="Price">Price</option>
+                    <option value="Country_of_origin">Country of Origin</option>
+                    Keywords: <input class="w3-input w3-section w3-border" type="text" name="keyword">
+                    <input class="w3-button w3-black w3-section" type="submit" value="Submit">
+            </form>
+        </div>
+
     <body>
 
         <div class="w3-container w3-padding-32" id="contact">
@@ -45,7 +58,9 @@ $attribute = $_POST["attribute"];
 
             # construct a sql query 
             # query depends on the attribute it gives
-            if ($attribute == "Price") {
+            if (!$keyword) {
+                $sql_cmd = "SELECT * FROM Product;";
+            } else if ($attribute == "Price") {
                 $sql_cmd = "SELECT * FROM Product WHERE $attribute = $keyword;";
             } else {
                 $sql_cmd = "SELECT * FROM Product WHERE $attribute LIKE '%$keyword%';";
@@ -55,7 +70,7 @@ $attribute = $_POST["attribute"];
             echo $sql_cmd; # print out the query
 
             # store the query result in feedback
-            $feedback=$conn->query($sql_cmd);
+            $feedback = $conn->query($sql_cmd);
 
             # print the result on screen
             if(!$feedback){
