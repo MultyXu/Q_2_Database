@@ -1,13 +1,8 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
 <?php 
 include 'functions.php';
-$employeeID = $_POST['info'];
-$conn = connect_mysql();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
 <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
@@ -20,14 +15,25 @@ $conn = connect_mysql();
             <a href="TODO" class="w3-bar-item w3-button">Login</a>
           </div>
         </div>
-    </div>
+</div>
 
 
-<?php
 
-$sql_cmd = "SELECT Name AND Address FROM User
-            WHERE User.ID = $employeeID ";
+<div class="w3-container w3-padding-32" id="contact">
+<body>
+<form action="../Task_C/employee_info.php" method="post">
+Keywords: <input class="w3-input w3-section w3-border" type="text" name="keyword">
+<input class="w3-button w3-black w3-section" type="submit" value="Submit">
+</form>
+</body>
+</div>
+
+<?php 
+$key = $_POST("keyword");
+$conn = connect_mysql();
+$sql_cmd = "SELECT * FROM Product WHERE Employee.Name LIKE '%$key%';";
 $feedback=$conn->query($sql_cmd);
+
 if(!$feedback){
     echo "Error";
 }
@@ -37,51 +43,34 @@ if ($feedback->num_rows == 0) {
 } else {
     echo " <br> The results are <br>";
     while($row = mysqli_fetch_assoc($feedback)){
+        $userType = $row["User_type"];
         $Name = $row["Name"];
         $ID = $row["ID"];
-        echo "Name:".$Name;
+        $userDept = $row["User_Dept"];
+        echo "User_type:".$userType. "<br>";
+        echo "Name:".$Name."<br>";
         echo "ID:". $ID." <br>";
-    }
-}
-?> 
-
-<body>
-Works On:
-</body>
-
-<?php
-$sql_cmd1 = "SELECT Works_On.Item_No FROM Works_On
-WHERE Works_On.Emp_ID = $employeeID";
-$feedback1=$conn->query($sql_cmd1);
-
-if(!$feedback1){
-    echo "Error";
-}
-
-if ($feedback1->num_rows == 0) {
-    echo "No result found <br>";
-} else {
-    echo " <br> The results are <br>";
-    while($row = mysqli_fetch_assoc($feedback1)){
-        $item = $row["Item_No"];
-        echo "Item:". $item." <br>";
+        echo "UserDept:". $userDept ."<br>";
         echo "<form action='../Task_C/update_task.php' method='post'>
-        <input type='submit' value='$item' name = 'delete'>
+        <input type='submit' value= '$ID' name = 'info'>
+        </form> <br> ";
+        echo "<form action='../Task_C/employee_info.php' method='post'>
+        <input type='submit' value='$ID' name = 'del'>
         </form> <br> ";
 
     }
 }
-?> 
+
+?>
+
 <?php
-$del_itemNo = $_POST['delete'];
-$sql = "DELETE FROM Works_On WHERE Emp_ID = $employeeID AND Item_number = '$del_itemNo';";
+$del = $_POST['del'];
+$sql = "DELETE FROM Employee WHERE ID ='$del';";
 $conn->query($sql);
 ?>
 
 
-<form action='../Task_B/product.php' method='post'>
-    <input type='submit' value='add' name = 'Add Task'>
+<form action='../Task_C/add_employee.php' method='post'>
+<input type='submit' value='add' name = 'add'>
 </form> <br> 
-
-
- </html>
+</html>

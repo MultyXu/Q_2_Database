@@ -29,10 +29,10 @@ $itemno = $_POST['item_no'];
 $price = $_POST['prices'];
 $quantity = $_POST['quantity'];
 if(array_key_exists('add', $_POST)) {
-    $sqlC1 = mysql_query("INSERT INTO Product(Item_number, Price, Quantity) VALUES ($itemno, $price, $quantity ); ");
+    $conn->query("INSERT INTO Product(Item_number, Price, Quantity) VALUES ($itemno, $price, $quantity ); ");
 }
 if (array_key_exists('delete', $_POST)) {
     $delItemNo = $_POST['item_no'];
-    $sqlC2 = mysql_query("DELETE FROM Product WHERE Item_number = '$delItemNo';");
+    $conn->query("DELETE FROM Product WHERE Item_number = '$delItemNo';");
 }
 ?>
