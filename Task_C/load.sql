@@ -6,6 +6,8 @@ LOAD DATA LOCAL INFILE '/opt/lampp/htdocs/Task_C/CSV/employee.csv' INTO TABLE Em
     IGNORE 1 LINES
     (Emp_ID,Name,User_Type,Passward,User_Dept);
 
+-- TODO add load command for product list
+
 UPDATE Department
 SET Manager_ID = 
     (SELECT Emp_ID 
