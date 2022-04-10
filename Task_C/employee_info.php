@@ -69,8 +69,10 @@ $sql = "DELETE FROM Employee WHERE ID ='$del';";
 $conn->query($sql);
 ?>
 
-
+<div class="w3-container w3-padding-32" id="contact">
 <form action='../Task_C/add_employee.php' method='post'>
-<input type='submit' value='add' name = 'add'>
-</form> <br> 
+<input class="w3-button w3-black w3-section" type='submit' value='add' name = 'add'>
+</form><br>
+</div>
+
 </html>
