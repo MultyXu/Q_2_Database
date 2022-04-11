@@ -4,7 +4,7 @@
 <html lang="en">
 
 <?php 
-include 'functions.php';
+include '../Task_C/functions.php';
 $employeeID = $_POST['info'];
 $conn = connect_mysql();
 ?>
@@ -45,9 +45,14 @@ if ($feedback->num_rows == 0) {
 }
 ?> 
 
+
+<div class="w3-top">
+<div class="w3-bar w3-white w3-wide w3-padding w3-card">
 <body>
 Works On:
 </body>
+</div>
+</div>
 
 <?php
 $sql_cmd1 = "SELECT Works_On.Item_No FROM Works_On
@@ -79,9 +84,12 @@ $conn->query($sql);
 ?>
 
 
+<div class="w3-container w3-padding-32" id="contact">
+<body>
 <form action='../Task_B/product.php' method='post'>
-    <input type='submit' value='add' name = 'Add Task'>
+    <input class="w3-input w3-section w3-border" type='submit' value='add' name = 'Add Task'>
 </form> <br> 
-
+</body>
+</div>
 
  </html>
